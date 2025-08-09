@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estefanía Arenas — Portafolio</title>
+  <meta name="description" content="Portafolio de Estefanía Arenas — programación web, diseño UX/UI, análisis de datos e inteligencia artificial." />
+  <style>
+    :root{
+      --bg:#f7f3ee; /* soft cream */
+      --card:#fff;
+      --muted:#9b8f87;
+      --accent:#e6d8c3; /* slightly darker cream */
+      --contrast:#b7c6d4; /* soft pastel blue */
+      --soft:#f0ebe7;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      --shadow: 0 8px 24px rgba(18,18,18,0.06);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;background:var(--bg);color:#2b2b2b;margin:0}
+
+    /* Layout */
+    header{background:linear-gradient(135deg,var(--contrast),var(--accent)); color:#102028; padding:48px 20px 64px; border-bottom-left-radius:32px; border-bottom-right-radius:32px}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    .hero{display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .hero-text{flex:1 1 420px}
+    h1{font-size:2rem;margin:0 0 12px;letter-spacing:0.2px}
+    p.lead{margin:0;color:var(--muted);font-size:0.98rem}
+
+    /* Carousel */
+    .carousel{position:relative;width:420px;max-width:46vw;min-width:280px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.2));}
+    .slides{display:flex;transition:transform 0.8s cubic-bezier(.2,.9,.2,1);width:300%}
+    .slide{min-width:100%;padding:36px;display:flex;align-items:center;justify-content:center}
+    .slide svg{width:100%;height:220px;max-height:260px}
+
+    .carousel-controls{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:space-between}
+    .dots{display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(16,32,40,0.12);cursor:pointer}
+    .dot.active{background:#102028}
+    .control-btn{background:rgba(255,255,255,0.7);border:none;padding:8px 12px;border-radius:10px;backdrop-filter: blur(6px);cursor:pointer;box-shadow:0 4px 12px rgba(16,32,40,0.06)}
+
+    /* Sections */
+    main{padding:28px 0}
+    section{margin:28px 0}
+    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+    .section-title h2{margin:0;font-size:1.15rem}
+    .section-title p{margin:0;color:var(--muted);font-size:0.95rem}
+
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);transition:transform .28s ease, box-shadow .28s ease;border:1px solid rgba(16,32,40,0.03)}
+    .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 18px 36px rgba(16,32,40,0.08)}
+    .card h3{margin:0 0 8px;font-size:1rem}
+    .card p{margin:0;color:var(--muted);font-size:0.9rem}
+
+    /* Skills */
+    .skills{display:flex;gap:12px;flex-wrap:wrap}
+    .skill{background:linear-gradient(180deg,var(--soft),var(--card));padding:16px;border-radius:12px;min-width:160px;display:flex;align-items:center;gap:12px;box-shadow:0 10px 30px rgba(16,32,40,0.04);transition:transform .22s ease, box-shadow .22s ease;cursor:default;border:1px solid rgba(16,32,40,0.02)}
+    .skill:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(16,32,40,0.06)}
+    .skill .emoji{font-size:1.7rem}
+    .skill .label{font-weight:600}
+
+    /* Contact */
+    .contact{display:flex;flex-direction:column;gap:8px}
+    .contact a{color:#102028;text-decoration:none;font-weight:600}
+
+    footer{padding:28px 0;color:var(--muted)}
+
+    /* Responsive tweaks */
+    @media (max-width:860px){
+      .carousel{order:2;width:100%;max-width:100%}
+      .hero{flex-direction:column-reverse;align-items:flex-start}
+    }
+
+    /* small utility */
+    .muted{color:var(--muted)}
+    .kbd{font-size:0.8rem;padding:6px 8px;border-radius:8px;background:var(--glass);border:1px solid rgba(0,0,0,0.03)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <div class="hero-text">
+        <h1>Hola, soy Estefanía Arenas</h1>
+        <p class="lead">Diseño y desarrollo experiencias digitales que combinan estética y función. Me especializo en programación web, UX/UI, análisis de datos e Inteligencia Artificial.</p>
+      </div>
+
+      <!-- Carousel -->
+      <div class="carousel" aria-label="Carrusel de innovación y creatividad">
+        <div class="slides" id="slides">
+          <!-- Slide 1: Circuit / tech abstract -->
+          <figure class="slide" aria-hidden="false">
+            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de circuitos y conectividad">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#eaf3ff" />
+                  <stop offset="1" stop-color="#f6efe8" />
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" rx="18" fill="url(#g1)" />
+              <g transform="translate(60,40)" fill="none" stroke="#102028" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+                <path d="M40 40 h120 a8 8 0 0 1 8 8 v60" stroke-opacity="0.9"/>
+                <circle cx="40" cy="40" r="12" fill="#fff" stroke="none"/>
+                <circle cx="160" cy="108" r="12" fill="#fff" stroke="none"/>
+                <path d="M160 108 h120 v-40 a8 8 0 0 1 8 -8 h80"/>
+                <circle cx="360" cy="60" r="12" fill="#fff" stroke="none"/>
+                <path d="M220 200 h-160 a12 12 0 0 0 -12 12 v24"/>
+                <rect x="320" y="150" width="180" height="120" rx="14" fill="#fff" stroke-opacity="0.06"/>
+              </g>
+              <text x="60" y="360" fill="#102028" font-size="20">Conectividad · Hardware · Sistemas</text>
+            </svg>
+          </figure>
+
+          <!-- Slide 2: Lightbulb idea / creativity -->
+          <figure class="slide" aria-hidden="true">
+            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de idea creativa y prototipado">
+              <rect width="100%" height="100%" rx="18" fill="#fff6ec" />
+              <g transform="translate(110,40)" fill="none" stroke="#102028" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M220 40 a72 72 0 1 0 -144 0 c0 40 36 64 36 64 v26 a12 12 0 0 0 12 12 h48 a12 12 0 0 0 12 -12 v-26 s36 -24 36 -64"/>
+                <rect x="170" y="240" width="120" height="34" rx="8" fill="#fff" stroke-opacity="0.03"/>
+                <line x1="210" y1="290" x2="320" y2="290" stroke-opacity="0.06" stroke-width="10"/>
+                <circle cx="160" cy="80" r="6" fill="#102028" />
+                <circle cx="280" cy="60" r="6" fill="#102028" />
+              </g>
+              <text x="54" y="360" fill="#102028" font-size="20">Idea · Prototipo · Creatividad</text>
+            </svg>
+          </figure>
+
+          <!-- Slide 3: AI / robot iconography -->
+          <figure class="slide" aria-hidden="true">
+            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de inteligencia artificial y aprendizaje">
+              <rect width="100%" height="100%" rx="18" fill="#eef9f6" />
+              <g transform="translate(140,46)" fill="none" stroke="#102028" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="40" y="40" width="220" height="180" rx="22" fill="#fff" stroke-opacity="0.03"/>
+                <circle cx="150" cy="130" r="36"/>
+                <path d="M150 166 v36" stroke-opacity="0.9"/>
+                <path d="M70 130 h-40"/>
+                <path d="M290 130 h40"/>
+                <path d="M70 90 h-20"/>
+                <path d="M310 90 h20"/>
+                <rect x="110" y="10" width="80" height="16" rx="8" />
+              </g>
+              <text x="52" y="360" fill="#102028" font-size="20">Inteligencia Artificial · ML · Automatización</text>
+            </svg>
+          </figure>
+        </div>
+
+        <div class="carousel-controls">
+          <div class="dots" id="dots"></div>
+          <div style="display:flex;gap:8px">
+            <button class="control-btn" id="prev" aria-label="Anterior">◀</button>
+            <button class="control-btn" id="next" aria-label="Siguiente">▶</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Innovación is the carousel in header - but we add a small intro -->
+    <section>
+      <div class="section-title">
+        <h2>Innovación y Creatividad</h2>
+        <p class="muted">Un vistazo a ideas visuales y conceptos tecnológicos que inspiran mis proyectos.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Proyectos Destacados</h2>
+        <p class="muted">Tarjetas interactivas con prototipos, productos y colaboraciones.</p>
+      </div>
+      <div class="projects" id="projects">
+        <article class="card">
+          <h3>Plataforma de E‑learning</h3>
+          <p>Arquitectura front-end moderna con accesibilidad y microinteracciones pensadas para retención.</p>
+        </article>
+        <article class="card">
+          <h3>Dashboard Analítico</h3>
+          <p>Visualizaciones limpias y pipelines que sintetizan grandes volúmenes de datos.</p>
+        </article>
+        <article class="card">
+          <h3>Asistente IA Conversacional</h3>
+          <p>Prototipo de IA para soporte que reduce tiempos de respuesta y mejora experiencia de usuario.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Habilidades</h2>
+        <p class="muted">Tecnologías y disciplinas con las que trabajo día a día.</p>
+      </div>
+      <div class="skills">
+        <div class="skill" title="Programación Web">
+          <div class="emoji">💻</div>
+          <div>
+            <div class="label">Programación Web</div>
+            <div class="muted">HTML · CSS · JavaScript</div>
+          </div>
+        </div>
+
+        <div class="skill" title="Diseño UX/UI">
+          <div class="emoji">🎨</div>
+          <div>
+            <div class="label">Diseño UX/UI</div>
+            <div class="muted">Prototipos · Figma · Research</div>
+          </div>
+        </div>
+
+        <div class="skill" title="Análisis de Datos">
+          <div class="emoji">📊</div>
+          <div>
+            <div class="label">Análisis de Datos</div>
+            <div class="muted">SQL · Python · Visualización</div>
+          </div>
+        </div>
+
+        <div class="skill" title="Inteligencia Artificial">
+          <div class="emoji">🤖</div>
+          <div>
+            <div class="label">Inteligencia Artificial</div>
+            <div class="muted">Modelos · ML Ops · Experimentación</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Contacto</h2>
+        <p class="muted">¿Hablamos? — Estoy disponible para proyectos y colaboraciones.</p>
+      </div>
+      <div class="contact">
+        <div>Email: <a href="mailto:arenasestefa123@gmail.com">arenasestefa123@gmail.com</a></div>
+        <div>Teléfono: <a href="tel:+573184737293">+57 318 473 7293</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div class="muted">© Estefanía Arenas — Diseño y Desarrollo</div>
+      <div class="muted kbd">Disponible para trabajo remoto</div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple carousel logic: vanilla JS, auto-advance with smooth transition
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = Array.from(slidesEl.children);
+      const dotsEl = document.getElementById('dots');
+      const nextBtn = document.getElementById('next');
+      const prevBtn = document.getElementById('prev');
+      let idx = 0;
+      let interval = null;
+      const total = slides.length;
+
+      // build dots
+      for(let i=0;i<total;i++){
+        const d = document.createElement('div');
+        d.className='dot'+(i===0? ' active':'');
+        d.dataset.index = i;
+        d.addEventListener('click', ()=>{ goTo(parseInt(d.dataset.index)); restart(); });
+        dotsEl.appendChild(d);
+      }
+
+      function update(){
+        slidesEl.style.transform = `translateX(-${idx*100}%)`;
+        Array.from(dotsEl.children).forEach((dot,i)=>{
+          dot.classList.toggle('active', i===idx);
+        });
+        // update aria-hidden flags
+        slides.forEach((s,i)=> s.setAttribute('aria-hidden', i!==idx));
+      }
+
+      function next(){ idx = (idx+1) % total; update(); }
+      function prev(){ idx = (idx-1 + total) % total; update(); }
+      function goTo(i){ idx = Math.max(0, Math.min(total-1, i)); update(); }
+
+      nextBtn.addEventListener('click', ()=>{ next(); restart(); });
+      prevBtn.addEventListener('click', ()=>{ prev(); restart(); });
+
+      // Auto play with pause on hover
+      function start(){ interval = setInterval(next, 4500); }
+      function stop(){ clearInterval(interval); interval = null; }
+      function restart(){ stop(); start(); }
+
+      const carousel = document.querySelector('.carousel');
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight') { next(); restart(); }
+        if(e.key === 'ArrowLeft') { prev(); restart(); }
+      });
+
+      // initialize
+      update(); start();
+    })();
+
+    // Small progressive enhancement for cards (optional demo effect)
+    (function(){
+      const cards = document.querySelectorAll('.card');
+      cards.forEach((c,i)=>{
+        c.style.transitionDelay = (i*80)+'ms';
+      });
+    })();
+  </script>
+</body>
+</html>
+
