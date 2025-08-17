@@ -4,171 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio - Estefania Arenas Gonzalez</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      background-color: #1c1f26;
-      color: #eaeaea;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #11141a;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid #3498db;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
-
-    header h1 {
-      margin: 10px 0 5px;
-      font-size: 30px;
-    }
-
-    header p {
-      font-size: 16px;
-      font-style: italic;
-      color: #bbb;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      background: #2a2f3a;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
-    }
-
-    section h2 {
-      border-left: 6px solid #3498db;
-      padding-left: 10px;
-      margin-bottom: 15px;
-      color: #3498db;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    button {
-      margin-top: 10px;
-      background: #3498db;
-      border: none;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #217dbb;
-    }
-
-    input {
-      margin-top: 5px;
-      padding: 6px;
-      border-radius: 4px;
-      border: none;
-      width: 100%;
-    }
-
-    .contacto a {
-      color: #3498db;
-      text-decoration: none;
-    }
-
-    .contacto a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #11141a;
-      color: #bbb;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <!-- Cambia el src por el nombre exacto de tu foto -->
-    <img src="Imagen de WhatsApp 2025-08-17 a las 15.45.37_aa1b532a.jpg" alt="Foto Estefania Arenas Gonzalez">
-    <h1>Estefania Arenas Gonzalez</h1>
-    <p>Estudiante de Tecnología en Desarrollo de Sistemas de Información y de Software (Faculta de Ingenieria) en la Univeridad Santiago de Cali</p>
+<body class="bg-gray-900 text-gray-200 font-sans">
+
+  <header class="text-center bg-gray-800 py-8">
+    <img src="perfil.jpg" alt="Foto Estefania" class="w-40 h-40 rounded-full border-4 border-blue-500 mx-auto mb-4 object-cover">
+    <h1 class="text-3xl font-bold">Estefania Arenas Gonzalez</h1>
+    <p class="italic text-gray-400">Estudiante de Tecnología en Desarrollo de Sistemas de Información y de Software</p>
   </header>
 
-  <section>
-    <h2>Sobre mí</h2>
-    <p>
-      Actualmente estudio una <strong>Tecnología en Desarrollo de Sistemas de Información y de Software</strong> en la <strong>Universidad Santiago de Cali</strong>, con conocimientos en desarrollo <strong>back-end y front-end</strong> usando frameworks sobre PHP.  
-      Cuento con un <strong>Técnico en Desarrollo de Multimedia</strong> realizado en el SENA (2021 - 2022) y un <strong>certificado de inglés nivel B1</strong> en American School Way.  
-      Me apasiona el diseño, soy creativa, disfruto el trabajo en equipo y estoy abierta a trabajos presenciales o remotos.
-    </p>
-  </section>
+  <main class="max-w-4xl mx-auto p-6 space-y-6">
+    <!-- Sobre mí -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold text-blue-400 border-l-4 border-blue-400 pl-2 mb-4">Sobre mí</h2>
+      <p>
+        Actualmente estudio una <strong>Tecnología en Desarrollo de Sistemas de Información y de Software</strong> en la <strong>Universidad Santiago de Cali</strong>.
+        Tengo conocimientos en <strong>back-end y front-end</strong> con PHP.  
+        Además, soy <strong>Técnica en Desarrollo de Multimedia</strong> (SENA, 2021-2022) y tengo un <strong>certificado de inglés B1</strong>.  
+        Me apasiona el diseño, soy creativa y disfruto el trabajo en equipo.
+      </p>
+    </section>
 
-  <section>
-    <h2>Historial Académico</h2>
-    <ul id="academico">
-      <li>Tecnología en Desarrollo de Sistemas de Información y de Software - Universidad Santiago de Cali (En curso)</li>
-      <li>Técnico en Desarrollo de Multimedia - SENA (2021 - 2022)</li>
-      <li>Certificado de Inglés B1 - American School Way</li>
-    </ul>
-    <input type="text" id="nuevoAcademico" placeholder="Añadir nuevo estudio...">
-    <button onclick="agregarItem('academico','nuevoAcademico')">Añadir</button>
-  </section>
+    <!-- Académico -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold text-blue-400 border-l-4 border-blue-400 pl-2 mb-4">Historial Académico</h2>
+      <ul id="academico" class="list-disc list-inside space-y-2">
+        <li>Tecnología en Desarrollo de Sistemas de Información y de Software - USC (En curso)</li>
+        <li>Técnico en Desarrollo de Multimedia - SENA (2021-2022)</li>
+        <li>Certificado de Inglés B1 - American School Way</li>
+      </ul>
+      <input type="text" id="nuevoAcademico" class="mt-2 p-2 rounded bg-gray-700 text-white w-full" placeholder="Añadir nuevo estudio...">
+      <button onclick="agregarItem('academico','nuevoAcademico')" class="mt-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Añadir</button>
+    </section>
 
-  <section>
-    <h2>Experiencia Laboral</h2>
-    <ul id="laboral">
-      <li>Secretaria en Transportes Pino (2 años) - Manejo de bases de datos y gestión administrativa</li>
-    </ul>
-    <input type="text" id="nuevoLaboral" placeholder="Añadir nueva experiencia...">
-    <button onclick="agregarItem('laboral','nuevoLaboral')">Añadir</button>
-  </section>
+    <!-- Laboral -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold text-blue-400 border-l-4 border-blue-400 pl-2 mb-4">Experiencia Laboral</h2>
+      <ul id="laboral" class="list-disc list-inside space-y-2">
+        <li>Secretaria en Transportes Pino (2 años) - Manejo de bases de datos</li>
+      </ul>
+      <input type="text" id="nuevoLaboral" class="mt-2 p-2 rounded bg-gray-700 text-white w-full" placeholder="Añadir nueva experiencia...">
+      <button onclick="agregarItem('laboral','nuevoLaboral')" class="mt-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Añadir</button>
+    </section>
 
-  <section>
-    <h2>Habilidades</h2>
-    <ul id="habilidades">
-      <li><strong>Lenguajes de Programación:</strong> C++, Java, HTML, CSS, Python (básico)</li>
-      <li><strong>Frameworks:</strong> PHP (back-end y front-end)</li>
-      <li><strong>Idiomas:</strong> Español (Nativo), Inglés (B1 certificado)</li>
-      <li><strong>Soft Skills:</strong> Creatividad, trabajo en equipo, adaptabilidad</li>
-    </ul>
-    <input type="text" id="nuevoHabilidad" placeholder="Añadir nueva habilidad...">
-    <button onclick="agregarItem('habilidades','nuevoHabilidad')">Añadir</button>
-  </section>
+    <!-- Habilidades -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold text-blue-400 border-l-4 border-blue-400 pl-2 mb-4">Habilidades</h2>
+      <ul id="habilidades" class="list-disc list-inside space-y-2">
+        <li>C++, Java, HTML, CSS, Python (básico)</li>
+        <li>Frameworks PHP (back-end y front-end)</li>
+        <li>Idiomas: Español (Nativo), Inglés (B1 certificado)</li>
+        <li>Creatividad, trabajo en equipo, adaptabilidad</li>
+      </ul>
+      <input type="text" id="nuevoHabilidad" class="mt-2 p-2 rounded bg-gray-700 text-white w-full" placeholder="Añadir nueva habilidad...">
+      <button onclick="agregarItem('habilidades','nuevoHabilidad')" class="mt-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Añadir</button>
+    </section>
 
-  <section>
-    <h2>Certificados</h2>
-    <p>Adjunto algunos certificados y diplomas:</p>
-    <ul>
-      <li><a href="certificado_tecnico.pdf" target="_blank">Técnico en Desarrollo de Multimedia - SENA</a></li>
-      <li><a href="certificado_ingles.pdf" target="_blank">Certificado de Inglés B1</a></li>
-    </ul>
-  </section>
+    <!-- Certificados -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold text-blue-400 border-l-4 border-blue-400 pl-2 mb-4">Certificados</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li><a href="certificado_tecnico.pdf" target="_blank" class="text-blue-400">Técnico en Desarrollo de Multimedia - SENA</a></li>
+        <li><a href="certificado_ingles.pdf" target="_blank" class="text-blue-400">Certificado de Inglés B1</a></li>
+      </ul>
+    </section>
 
-  <section class="contacto">
-    <h2>Contacto</h2>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/estefania-arenas-gonzalez-526782372" target="_blank">www.linkedin.com/in/estefania-arenas-gonzalez-526782372</a></p>
-    <p><strong>Teléfono:</strong> 3184737293</p>
-    <p><strong>Email:</strong> <a href="mailto:arenasestefa123@gmail.com">arenasestefa123@gmail.com</a></p>
-  </section>
+    <!-- Contacto -->
+    <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold text-blue-400 border-l-4 border-blue-400 pl-2 mb-4">Contacto</h2>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/estefania-arenas-gonzalez-526782372" class="text-blue-400">Perfil</a></p>
+      <p><strong>Teléfono:</strong> 3184737293</p>
+      <p><strong>Email:</strong> <a href="mailto:arenasestefa123@gmail.com" class="text-blue-400">arenasestefa123@gmail.com</a></p>
+    </section>
+  </main>
 
-  <footer>
+  <footer class="bg-gray-800 text-center py-4 text-gray-500 mt-6">
     © 2025 Estefania Arenas Gonzalez - Portafolio Profesional
   </footer>
 
